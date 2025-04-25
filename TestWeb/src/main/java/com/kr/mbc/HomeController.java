@@ -34,6 +34,34 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
+		
+		/*
+		<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<beans:property name="prefix" value="/WEB-INF/views/" />
+			<bea
+			ns:property name="suffix" value=".jsp" />
+		</beans:bean>
+		
+		/WEB-INF/views/home.jsp ==> view + model(값 = serverTime)
+		 
+		 */
+		
+		
+		/*
+			request.setAttribute("board", bVo);
+
+			request.getRequestDispatcher("/board/boardUpdate.jsp")
+			.forward(request, response);
+		 */
+	}
+	
+	@RequestMapping(value = "/my", method = RequestMethod.GET)
+	public String myHome(Model model) {
+		
+		model.addAttribute("name", "rohyukyeong");
+		
+		return "my";
+		///WEB-INF/views/my.jsp ==> view + model(name)
 	}
 	
 }
