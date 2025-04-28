@@ -7,15 +7,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../resource/css/shopping.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/shopping.css">
 </head>
 <body>
    <div id="wrap" align="center">
       <h1>게시글 리스트</h1>
       <table class="list">
          <tr>
-            <td colspan="5" style="border: white; text-align: right">
-            <a href="BoardServlet?command=board_write_form">게시글 등록</a></td>
+            <td colspan="5" style="border: white; text-align: right"><a
+               href="/board/register">게시글 등록</a></td>
          </tr>
          <tr>
             <th>번호</th>
@@ -28,9 +28,9 @@
             <tr class="record">
                <td>${board.num }</td>
                <td><a href="BoardServlet?command=board_view&num=${board.num}">
-                     ${board.title } </a></td>
+                     ${board.title} </a></td>
                <td>${board.name}</td>
-               <td><fmt:formatDate value="${board.writeDate }" /></td>
+               <td><fmt:formatDate value="${board.writeDate}" /></td>
                <td>${board.readCount}</td>
             </tr>
          </c:forEach>
