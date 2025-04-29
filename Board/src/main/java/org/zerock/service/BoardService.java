@@ -46,5 +46,16 @@ public class BoardService {
 	public void updateReadCount(int num) {
 		boardRepository.updateReadCount(num);
 	}
+	
+	public boolean checkPassword(int num, String pass) {
+		BoardVO vo = boardRepository.selectOneByNum(num);
+		
+		//입력받은 비밀번호와 DB저장된 비밀번호가 같은가?
+		if(vo.getPass().equals(pass)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 
 }

@@ -31,9 +31,9 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		model.addAttribute("serverTime", formattedDate );
+//		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "redirect:/board/"; //board 리스트 전체 목록 출력
 	}
 	
 }
