@@ -8,4 +8,20 @@
     select sysdate from dual
   </select>
   
+  <select id="selectAllList" resultType="org.zerock.dto.BoardVO">
+  	select * from board order by num desc
+  </select>
+  
+  <select id="selectOneByNum" resultType="org.zerock.dto.BoardVO">
+  	select * from board where num = #{num}
+  </select>
+  
+  <insert id="insertBoard" parameterType="org.zerock.dto.BoardVO">
+  
+  	insert into board(num, name, pass, email, title, content)
+  	values(board_seq.nextval, #{name},#{pass}, #{email}, #{title}, #{content})
+  
+  </insert>
+  	
+  
 </mapper>
