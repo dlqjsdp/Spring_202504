@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.BoardMapper">
+
+  <select id="read" resultType="org.zerock.domain.BoardVO">
+    select * from tbl_board where bno = #{bno}
+  </select>
+  
+  <select id="getList" resultType="org.zerock.domain.BoardVO">
+  	select * from tbl_board where bno > 0
+  </select>
+  
+  <insert id="insert">
+  	insert into tbl_board(bno, title, content, writer)
+  	values(seq_board.nextval, #{title}, #{content}, #{writer})
+  </insert>
+  
+  <insert id="insertSelectKey">
+  	<selectKey keyProperty="bno" order="BEFORE" resultType="Long">
+  		select seq_board.nextval from dual
+  	</selectKey> 
+  	<!-- 먼저 SELECT seq_board.NEXTVAL FROM dual 실행
+			→ 게시글 번호 bno를 미리 얻음 
+		 얻은 bno 값이 vo.setBno(...)처럼 자동 주입됨
+		 그다음 INSERT 실행-->
+  	
+  	insert into tbl_board(bno, title, content, writer)
+  	values(#{bno}, #{title}, #{content}, #{writer})
+  </insert>
+  
+  <delete id="delete">
+  	delete from tbl_board where bno = #{bno}
+  </delete>
+  
+  <update id="update">
+  	update tbl_board
+  	set title = #{title},
+  	content = #{content},
+  	writer = #{writer},
+  	updatedate = sysdate
+  	where bno = #{bno}
+  </update>
+  
+</mapper>
