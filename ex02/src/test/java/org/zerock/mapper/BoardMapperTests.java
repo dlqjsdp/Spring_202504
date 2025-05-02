@@ -23,7 +23,7 @@ public class BoardMapperTests {
 	
 	@Test
 	public void testRead() {
-		log.info(mapper.read(1L));
+		log.info(mapper.read(1L)); //존재하는 게시물 번호로 테스트
 	}
 	
 	@Test

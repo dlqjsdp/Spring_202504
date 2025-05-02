@@ -1,10 +1,264 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 May 2025 00:40:20 GMT</lastBuildDate><item><title><![CDATA[Spring AI 1.0.0 M8 Released]]></title><link>https://spring.io/blog/2025/04/30/spring-ai-1-0-0-m8-released</link><guid isPermaLink="true">https://spring.io/blog/2025/04/30/spring-ai-1-0-0-m8-released</guid><dc:creator><![CDATA[markpollack]]></dc:creator><pubDate>Wed, 30 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;After reviewing our API design and deprecations post M7, we determined that several significant changes would become breaking changes in an RC1 release. Therefore, we&apos;ve introduced this additional milestone to provide developers with a transitional release where deprecated APIs coexist alongside their replacements, enabling a smoother upgrade experience before RC1.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 02 May 2025 00:49:48 GMT</lastBuildDate><item><title><![CDATA[A Bootiful Podcast: Spring instructor Mary Ellen Bowman]]></title><link>https://spring.io/blog/2025/05/01/a-bootiful-podcast-mary-ellen-bowman</link><guid isPermaLink="true">https://spring.io/blog/2025/05/01/a-bootiful-podcast-mary-ellen-bowman</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Thu, 01 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! In this installment I talk to Mary Ellen Bowman, a legendary Spring instructor!&lt;/p&gt;
+&lt;iframe title=&quot;Spring instructor Mary Ellen Bowman&quot; allowtransparency=&quot;true&quot; height=&quot;300&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:300px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?from=embed&amp;i=pirgm-1898ddf-pb&amp;square=1&amp;share=1&amp;download=1&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;rtl=0&amp;logo_link=&amp;btn-skin=7&amp;size=300&quot; loading=&quot;lazy&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Spring Cloud 2025.0.0-RC1 (aka Northfields) has been released]]></title><link>https://spring.io/blog/2025/05/01/spring-cloud-2025-0-0-rc1-released</link><guid isPermaLink="true">https://spring.io/blog/2025/05/01/spring-cloud-2025-0-0-rc1-released</guid><dc:creator><![CDATA[ryanjbaxter]]></dc:creator><pubDate>Thu, 01 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the community, I am pleased to announce that the Release Candidate 1 (RC1) of the &lt;a href=&quot;https://cloud.spring.io&quot;&gt;Spring Cloud 2025.0.0&lt;/a&gt; Release Train is available today. The release can be found in &lt;a href=&quot;https://repo.spring.io/milestone/&quot;&gt;Spring Milestone&lt;/a&gt; repository. You can check out the 2025.0 &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2025.0-Release-Notes&quot;&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;notable-changes-in-the-202500-release-train&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#notable-changes-in-the-202500-release-train&quot; aria-label=&quot;notable changes in the 202500 release train permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Notable Changes in the 2025.0.0 Release Train&lt;/h2&gt;
+&lt;p&gt;This release is based on Spring Boot 3.5.0-RC1.&lt;/p&gt;
+&lt;p&gt;For a complete list of changes made in this release see &lt;a href=&quot;https://github.com/orgs/spring-cloud/projects/174&quot;&gt;this project on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;spring-cloud-config&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-cloud-config&quot; aria-label=&quot;spring cloud config permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Support YAML specific profile documents in AWS S3 buckets (&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-config/pull/2825&quot;&gt;#2825&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;spring-cloud-gateway&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-cloud-gateway&quot; aria-label=&quot;spring cloud gateway permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring Cloud Gateway&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Allow registering custom filters and predicates as beans (&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-gateway/issues/3250&quot;&gt;#3250&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Support setting Spring.webflux.base-path and supporting it in path predicate (&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-gateway/pull/2984&quot;&gt;#2984&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Add Permissions-Policy as configurable option to SecureHeaders GatewayFilter (&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-gateway/issues/2975&quot;&gt;#2975&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Support for reloading httpClient connectTimeout Configuration (&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-gateway/pull/3679&quot;&gt;#3679&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;spring-cloud-task&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-cloud-task&quot; aria-label=&quot;spring cloud task permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring Cloud Task&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added deprecation notifications for Remote Partitioning and Task Launcher (&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-task/commit/1d4e1593ac41b0bc192fca6bef7a15a52ab3dbcc&quot;&gt;1d4e159&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;spring-cloud-stream&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-cloud-stream&quot; aria-label=&quot;spring cloud stream permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring Cloud Stream&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;StreamBridge does not add dynamic Bindings to Output/Input binding lifecycle (&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-stream/issues/3106&quot;&gt;#3106&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;spring-cloud-function&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-cloud-function&quot; aria-label=&quot;spring cloud function permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring Cloud Function&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring Cloud Function Web is essentially deprecated with Spring Cloud Function support in Spring Cloud Gateway as the replacement.&lt;/li&gt;
+&lt;li&gt;Deprecate RSocket module (&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-function/issues/1267&quot;&gt;#1267&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Allow adapter to listen for additional http verbs (&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-function/pull/1271&quot;&gt;#1271&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following modules were updated as part of 2025.0.0-RC1:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Module&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Issues&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Netflix&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-netflix/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Starter Build&lt;/td&gt;
+&lt;td&gt;2025.0.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-starter-build/releases/tag/v2025.0.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Consul&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-consul/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Config&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-config/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Build&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-build/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Gateway&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-gateway/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Zookeeper&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-zookeeper/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Contract&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Circuitbreaker&lt;/td&gt;
+&lt;td&gt;3.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-circuitbreaker/releases/tag/v3.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Task&lt;/td&gt;
+&lt;td&gt;3.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-task/releases/tag/v3.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Kubernetes&lt;/td&gt;
+&lt;td&gt;3.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-kubernetes/releases/tag/v3.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Bus&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-bus/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Commons&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-commons/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Openfeign&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-openfeign/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Stream&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-stream/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Function&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-function/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Vault&lt;/td&gt;
+&lt;td&gt;4.3.0-RC1&lt;/td&gt;
+&lt;td&gt;(&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-vault/releases/tag/v4.3.0-RC1&quot;&gt;issues&lt;/a&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As always, we welcome feedback on &lt;a href=&quot;https://github.com/spring-cloud/&quot;&gt;GitHub&lt;/a&gt;, on &lt;a href=&quot;https://gitter.im/spring-cloud/spring-cloud&quot;&gt;Gitter&lt;/a&gt;, on &lt;a href=&quot;https://stackoverflow.com/questions/tagged/spring-cloud&quot;&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href=&quot;https://twitter.com/SpringCloud&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;
+    &amp;#x3C;repositories&gt;
+        &amp;#x3C;repository&gt;
+            &amp;#x3C;id&gt;spring-milestones&amp;#x3C;/id&gt;
+            &amp;#x3C;name&gt;Spring Milestones&amp;#x3C;/name&gt;
+            &amp;#x3C;url&gt;https://repo.spring.io/milestone&amp;#x3C;/url&gt;
+            &amp;#x3C;snapshots&gt;
+                &amp;#x3C;enabled&gt;false&amp;#x3C;/enabled&gt;
+            &amp;#x3C;/snapshots&gt;
+        &amp;#x3C;/repository&gt;
+    &amp;#x3C;/repositories&gt;
+&amp;#x3C;dependencyManagement&gt;
+    &amp;#x3C;dependencies&gt;
+        &amp;#x3C;dependency&gt;
+            &amp;#x3C;groupId&gt;org.springframework.cloud&amp;#x3C;/groupId&gt;
+            &amp;#x3C;artifactId&gt;spring-cloud-dependencies&amp;#x3C;/artifactId&gt;
+            &amp;#x3C;version&gt;2025.0.0-RC1&amp;#x3C;/version&gt;
+            &amp;#x3C;type&gt;pom&amp;#x3C;/type&gt;
+            &amp;#x3C;scope&gt;import&amp;#x3C;/scope&gt;
+        &amp;#x3C;/dependency&gt;
+    &amp;#x3C;/dependencies&gt;
+&amp;#x3C;/dependencyManagement&gt;
+&amp;#x3C;dependencies&gt;
+    &amp;#x3C;dependency&gt;
+        &amp;#x3C;groupId&gt;org.springframework.cloud&amp;#x3C;/groupId&gt;
+        &amp;#x3C;artifactId&gt;spring-cloud-starter-config&amp;#x3C;/artifactId&gt;
+    &amp;#x3C;/dependency&gt;
+    &amp;#x3C;dependency&gt;
+        &amp;#x3C;groupId&gt;org.springframework.cloud&amp;#x3C;/groupId&gt;
+        &amp;#x3C;artifactId&gt;spring-cloud-starter-netflix-eureka-client&amp;#x3C;/artifactId&gt;
+    &amp;#x3C;/dependency&gt;
+    ...
+&amp;#x3C;/dependencies&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or with Gradle:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-groovy&quot;&gt;plugins {
+  id &apos;java&apos;
+  id &apos;org.springframework.boot&apos; version &apos;3.5.0-RC1&apos;
+  id &apos;io.spring.dependency-management&apos; version &apos;1.1.7&apos;
+}
+
+//...
+
+ext {
+  set(&apos;springCloudVersion&apos;, &quot;2025.0.0-RC1&quot;)
+}
+
+dependencies {
+  implementation &apos;org.springframework.cloud:spring-cloud-starter-config&apos;
+  implementation &apos;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&apos;
+  //...
+}
+
+dependencyManagement {
+  imports {
+    mavenBom &quot;org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}&quot;
+  }
+}
+
+//...
+
+&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title><![CDATA[Spring AI 1.0.0 M8 Released]]></title><link>https://spring.io/blog/2025/04/30/spring-ai-1-0-0-m8-released</link><guid isPermaLink="true">https://spring.io/blog/2025/04/30/spring-ai-1-0-0-m8-released</guid><dc:creator><![CDATA[markpollack]]></dc:creator><pubDate>Wed, 30 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;After reviewing our API design and deprecations post M7, we determined that several significant changes would become breaking changes in an RC1 release. Therefore, we&apos;ve introduced this additional milestone to provide developers with a transitional release where deprecated APIs coexist alongside their replacements, enabling a smoother upgrade experience before RC1.&lt;/p&gt;
 &lt;p&gt;Here are the key changes in this release.&lt;/p&gt;
 &lt;h2 id=&quot;important-links&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#important-links&quot; aria-label=&quot;important links permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Important Links&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/upgrade-notes.html#upgrading-to-1-0-0-m7&quot;&gt;Upgrade Notes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;You can automate the upgrade process to 1.0.0-M8 using an OpenRewrite recipe. This recipe helps apply many of the necessary code changes for this version. Find the recipe and usage instructions at &lt;a href=&quot;https://github.com/arconia-io/arconia-migrations/blob/main/docs/spring-ai.md&quot;&gt;Arconia Spring AI Migrations&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&quot;breaking-changes&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#breaking-changes&quot; aria-label=&quot;breaking changes permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Breaking Changes&lt;/h2&gt;
+&lt;p&gt;When upgrading from Spring AI 1.0 M7 to 1.0 M8, users who previously registered tool callbacks are encountering breaking changes that cause tool calling functionality to silently fail. This is specifically impacting code that used the deprecated &lt;code&gt;tools()&lt;/code&gt; method.&lt;/p&gt;
+&lt;h3 id=&quot;example&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#example&quot; aria-label=&quot;example permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Example&lt;/h3&gt;
+&lt;p&gt;Here&apos;s an example of code that worked in M7 but no longer functions as expected in M8:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;// Old code in M7 - no longer works correctly in M8
+chatClient.prompt(&quot;What day is tomorrow?&quot;)
+    .tools(toolCallback)
+    .call()
+    .content();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;how-to-adapt-your-code&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#how-to-adapt-your-code&quot; aria-label=&quot;how to adapt your code permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How to Adapt Your Code&lt;/h3&gt;
+&lt;p&gt;To fix this issue when upgrading to M8, you need to update your code to use the new &lt;code&gt;toolCallbacks()&lt;/code&gt; method:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;// Updated code for M8
+chatClient.prompt(&quot;What day is tomorrow?&quot;)
+    .toolCallbacks(toolCallback)
+    .call()
+    .content();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;why-this-change-was-made&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#why-this-change-was-made&quot; aria-label=&quot;why this change was made permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Why This Change Was Made&lt;/h3&gt;
+&lt;p&gt;The Spring AI team renamed the overloaded &lt;code&gt;tools()&lt;/code&gt; methods to improve clarity and prevent ambiguity in method dispatching. The previous API design led to confusion when the Java compiler needed to select between multiple overloaded methods based on parameter types.&lt;/p&gt;
+&lt;h3 id=&quot;method-mapping-from-m7-to-m8&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#method-mapping-from-m7-to-m8&quot; aria-label=&quot;method mapping from m7 to m8 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Method Mapping from M7 to M8&lt;/h3&gt;
+&lt;p&gt;Here&apos;s how the old methods map to their new counterparts:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tools(String... toolNames)&lt;/code&gt; ¡æ &lt;code&gt;toolNames(String... toolNames)&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use when referring to tools registered elsewhere (e.g., via &lt;code&gt;@Bean&lt;/code&gt; with &lt;code&gt;@Description&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tools(ToolCallback... toolCallbacks)&lt;/code&gt; ¡æ &lt;code&gt;toolCallbacks(ToolCallback... toolCallbacks)&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use for inline tool callback registration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tools(List&amp;#x3C;ToolCallback&gt; toolCallbacks)&lt;/code&gt; ¡æ &lt;code&gt;toolCallbacks(List&amp;#x3C;ToolCallback&gt; toolCallbacks)&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use when you have a collection of tool callbacks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tools(ToolCallbackProvider... toolCallbackProviders)&lt;/code&gt; ¡æ &lt;code&gt;toolCallbacks(ToolCallbackProvider... toolCallbackProviders)&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use for objects implementing the &lt;code&gt;ToolCallbackProvider&lt;/code&gt; interface&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tools(Object... toolObjects)&lt;/code&gt; remains unchanged&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use only for objects with methods annotated with &lt;code&gt;@Tool&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;improved-error-handling&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#improved-error-handling&quot; aria-label=&quot;improved error handling permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Improved Error Handling&lt;/h3&gt;
+&lt;p&gt;In the &lt;a href=&quot;https://github.com/spring-projects/spring-ai/pull/2964&quot;&gt;latest PR (spring-projects/spring-ai#2964)&lt;/a&gt;, the &lt;code&gt;tools(Object... toolObjects)&lt;/code&gt; method will now throw an exception when no &lt;code&gt;@Tool&lt;/code&gt; methods are found on the provided objects, rather than silently failing. This helps developers identify migration issues immediately.&lt;/p&gt;
+&lt;h3 id=&quot;migration-summary&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#migration-summary&quot; aria-label=&quot;migration summary permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Migration Summary&lt;/h3&gt;
+&lt;p&gt;If you&apos;re upgrading from M7 to M8:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Replace all calls to &lt;code&gt;.tools(toolCallback)&lt;/code&gt; with &lt;code&gt;.toolCallbacks(toolCallback)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Replace all calls to &lt;code&gt;.tools(toolCallbackProvider)&lt;/code&gt; with &lt;code&gt;.toolCallbacks(toolCallbackProvider)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Replace all calls to &lt;code&gt;.tools(&quot;toolName&quot;)&lt;/code&gt; with &lt;code&gt;.toolNames(&quot;toolName&quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These changes will ensure your tool calling functionality continues to work correctly after upgrading to Spring AI 1.0 M8.&lt;/p&gt;
 &lt;h2 id=&quot;new-features&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#new-features&quot; aria-label=&quot;new features permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;New Features&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Chat Memory Enhancements&lt;/li&gt;
@@ -196,22 +450,4 @@
 &lt;li&gt;Did you see &lt;a href=&quot;https://www.infoq.com/news/2025/04/spring-news-roundup-apr21-2025/&quot;&gt;InfoQ&apos;s Java Roundup? It&apos;s awesome!&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;I love this French-language article looking at Spring core committer S?bastien Deleuze&apos;s talk &lt;a href=&quot;https://javaetmoi.com/2025/04/optimisez-vos-applications-spring-boot-avec-cds-et-le-projet-leyden/&quot;&gt;on optimizing Spring Boot applications with CDS and Project Leyden&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://medium.com/javarevisited/why-every-other-backend-framework-is-trash-except-spring-boot-21e7c1ee1a0b&quot;&gt;Why every other backend framework is trash (except Spring Boot)&lt;/a&gt; - LOL!&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Spring Boot 3.5.0-RC1 available now]]></title><link>https://spring.io/blog/2025/04/25/spring-boot-3-5-0-RC1-available-now</link><guid isPermaLink="true">https://spring.io/blog/2025/04/25/spring-boot-3-5-0-RC1-available-now</guid><dc:creator><![CDATA[wilkinsona]]></dc:creator><pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the team and everyone who has contributed, I&apos;m happy to announce that Spring Boot &lt;code&gt;3.5.0-RC1&lt;/code&gt; has been released and is now available from &lt;a href=&quot;https://repo.spring.io/milestone&quot;&gt;https://repo.spring.io/milestone&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href=&quot;https://github.com/spring-projects/spring-boot/releases/tag/v3.5.0-RC1&quot;&gt;133 enhancements, documentation improvements, dependency upgrades, and bug fixes&lt;/a&gt;. Notable new features include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Support for Docker&apos;s credential stores and helpers when using Cloud Native Buildpacks&lt;/li&gt;
-&lt;li&gt;Configuration property binding performance improvements&lt;/li&gt;
-&lt;li&gt;Annotation-based filter and servlet registration&lt;/li&gt;
-&lt;li&gt;Auto-configuration for background initialization of beans&lt;/li&gt;
-&lt;li&gt;Properties for global WebClient configuration&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Please see the &lt;a href=&quot;https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.5.0-RC1-Release-Notes&quot;&gt;release notes&lt;/a&gt; for more details and upgrade instructions.&lt;/p&gt;
-&lt;p&gt;Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
-&lt;h3 id=&quot;how-can-you-help&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#how-can-you-help&quot; aria-label=&quot;how can you help permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&apos;re interested in helping out, check out the &lt;a href=&quot;https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution&quot;&gt;&quot;ideal for contribution&quot; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href=&quot;https://stackoverflow.com&quot;&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href=&quot;https://stackoverflow.com/tags/spring-boot&quot;&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-boot/&quot;&gt;Project Page&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-boot&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-boot/issues&quot;&gt;Issues&lt;/a&gt; | &lt;a href=&quot;https://docs.spring.io/spring-boot/3.5/&quot;&gt;Documentation&lt;/a&gt; | &lt;a href=&quot;https://stackoverflow.com/questions/tagged/spring-boot&quot;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring gRPC 0.8.0 available now]]></title><link>https://spring.io/blog/2025/04/25/spring-grpc-0-8-8-available-now</link><guid isPermaLink="true">https://spring.io/blog/2025/04/25/spring-grpc-0-8-8-available-now</guid><dc:creator><![CDATA[dsyer]]></dc:creator><pubDate>Fri, 25 Apr 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the team and everyone who has contributed, I&apos;m happy to announce that Spring gRPC &lt;code&gt;0.8.0&lt;/code&gt; has been released and is now available from Maven Central. This is the first &quot;non-experimental&quot; release, signified by the project moving to its new repository location in the &lt;a href=&quot;https://github.com/spring-projects&quot;&gt;https://github.com/spring-projects&lt;/a&gt; organization. Support will be provided for the only current 0.x release, and the normal cycle of extended support will start with the 1.0.0 release (expected around the same time as Spring Boot 4.0.0).&lt;/p&gt;
-&lt;p&gt;The main change in this release was to upgrade Spring Boot and also the gRPC Java and Protobuf libraries. Protobuf is now at version 4.&lt;/p&gt;
-&lt;h3 id=&quot;how-can-you-help&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#how-can-you-help&quot; aria-label=&quot;how can you help permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&apos;re interested in helping out, check out the open &lt;a href=&quot;https://github.com/spring-projects-experimental/spring-grpc/issues&quot;&gt;issues&lt;/a&gt;.
-If you have general questions, please ask on Stack Overflow using the &lt;a href=&quot;https://stackoverflow.com/tags/spring-grpc&quot;&gt;&lt;code&gt;spring-grpc&lt;/code&gt; tag&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/spring-projects-experimental/spring-grpc&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects-experimental/spring-grpc/issues&quot;&gt;Issues&lt;/a&gt; | &lt;a href=&quot;https://docs.spring.io/spring-grpc/reference/&quot;&gt;Documentation&lt;/a&gt; | &lt;a href=&quot;https://stackoverflow.com/tags/spring-grpc&quot;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>

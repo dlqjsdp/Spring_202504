@@ -74,6 +74,7 @@ public class BoardControllerTests {
 				);
 	}
 	
+	
 	@Test
 	public void testDelete() throws Exception{
 		String resultPage = mockMvc.perform(MockMvcRequestBuilders
@@ -85,6 +86,7 @@ public class BoardControllerTests {
 		
 		log.info("======>" + resultPage);
 	}
+	
 	
 	@Test
 	public void testModify() throws Exception{

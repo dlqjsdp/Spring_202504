@@ -7,8 +7,8 @@ import org.zerock.domain.BoardVO;
 
 public interface BoardMapper {
 	
-	
 	public List<BoardVO> getList();
+	
 	public BoardVO read(Long bno);
 	
 	public void insert(BoardVO board);

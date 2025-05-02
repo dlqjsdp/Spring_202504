@@ -5,11 +5,11 @@
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
   <select id="read" resultType="org.zerock.domain.BoardVO">
-    select * from tbl_board where bno = #{bno}
+    select * from tbl_board where bno = #{bno} 
   </select>
   
   <select id="getList" resultType="org.zerock.domain.BoardVO">
-  	select * from tbl_board where bno > 0
+  	select * from tbl_board where bno > 0 order by bno asc
   </select>
   
   <insert id="insert">
