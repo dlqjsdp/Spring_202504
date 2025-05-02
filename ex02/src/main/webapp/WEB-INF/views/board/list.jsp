@@ -89,7 +89,6 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		let result = "<c:out value='${result}' />"
-		let resultType = "<c:out value='${resultType}' />";
 		
 		checkModal(result);
 		
