@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zerock.domain.BoardVO;
+import org.zerock.domain.Criteria;
 
 import lombok.extern.log4j.Log4j;
 
@@ -88,6 +89,14 @@ public class BoardMapperTests {
 		log.info("result >>> " + result);
 		// bno = 6이 존재하면 1행 수정 → result = 1,
 		// 없으면 수정 실패 → result = 0
+	}
+	
+	@Test
+	public void testPaggin() {
+		List<BoardVO> list = 
+				mapper.getListWithPaging(new Criteria(3, 10));
+		
+		list.forEach(board -> log.info(board));
 	}
 
 }

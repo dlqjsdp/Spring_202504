@@ -49,6 +49,28 @@
                     </c:forEach>
                 </table>
                 
+                <!-- 페이징 처리 -->
+                <div class="container">
+					<div class='pull-right'>
+					  <ul class="pagination">
+					  
+					  	<c:if test="${pageMaker.prev}">
+					    	<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+					    </c:if>
+					    
+					    <c:forEach var="num" begin="${pageMaker.startPage}" 
+					    end="${pageMaker.endPage}">
+					    	<li class="page-item"><a class="page-link" href="#">${num}</a></li>
+					    </c:forEach>
+					    
+					    <c:if test="${pageMaker.next}">
+					    	<li class="page-item"><a class="page-link" href="#">Next</a></li>
+					    </c:if>
+					  </ul>
+					</div>
+				</div>
+                <!-- 페이징 종료 -->
+                
             </div>
             <!-- /.panel-body -->
         </div>
@@ -93,7 +115,7 @@
 		checkModal(result);
 		
 		//브라우저의 현재 히스토리 항목을 새로운 상태로 대체.
-		// 페이지를 새로고침 하거나 뒤로 가기 했을 때 모달창이 다시 표시되지 않도록 한다.
+		//페이지를 새로고침 하거나 뒤로 가기 했을 때 모달창이 다시 표시되지 않도록 한다.
 		history.replaceState({}, null, null);
 		
 		function checkModal(result){
