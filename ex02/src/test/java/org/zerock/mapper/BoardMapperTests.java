@@ -2,7 +2,9 @@ package org.zerock.mapper;
 
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -97,6 +99,50 @@ public class BoardMapperTests {
 				mapper.getListWithPaging(new Criteria(3, 10));
 		
 		list.forEach(board -> log.info(board));
+	}
+	
+	
+	@Test
+	public void testSearch() {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("T", "aaaa");
+		map.put("C", "aaaa");
+		map.put("W", "홍길동");
+		
+		Map<String, Map<String, String>> outer = new HashMap<>();
+		
+		outer.put("map", map);
+		
+//		log.info(outer.get("map"));
+//		log.info((outer.get("map")).get("T"));
+		List<BoardVO> list = mapper.searchTest(outer);
+		
+		log.info("-------------------");
+		
+		log.info(list);
+	}
+	
+	@Test
+	public void testSearch2() {
+		Criteria cri = new Criteria();
+		
+		cri.setKeyword("수정");
+		cri.setType("TW");
+		
+		mapper.getListWithPaging(cri)
+			.forEach(board-> log.info(board));
+	}
+	
+	@Test
+	public void testTotalCount() {
+		Criteria cri = new Criteria();
+		
+		cri.setKeyword("수정");
+		cri.setType("TW");
+		
+		log.info("total count : ");
+		log.info(mapper.getTotalCount(cri));
 	}
 
 }

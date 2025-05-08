@@ -35,10 +35,8 @@
                     	<tr>
                     		<td><c:out value="${board.bno}" /></td>
                     		
-                    		<%-- <td><a href='/board/get?bno=${board.bno}'>${board.title}</a></td> --%>
-                    		
-                    		<td><a href='/board/get?bno=${board.bno}'>
-                    		<c:out value="${board.title}" /></a></td>
+                    		<td><a class="move" href='<c:out value="${board.bno}"/>'>
+                    		<c:out value="${board.title}"/></a></td>
                     			
                     		<td><c:out value="${board.writer}" /></td>
                     		<td><fmt:formatDate pattern="yyyy-MM-dd" 
@@ -49,27 +47,58 @@
                     </c:forEach>
                 </table>
                 
+                <!-- 검색조건 -->
+                
+                <div class="row">
+                	<div class="col-lg-12">
+	                	<form action="/board/list" id="searchForm">
+	                		<select name="type">
+	                			<option value="">--</option>
+	                			<option value="T">제목</option>
+	                			<option value="C">내용</option>
+	                			<option value="W">작성자</option>	                		
+	                			<option value="TC">제목or내용</option>
+	                			<option value="TW">제목or작성자</option>
+	                			<option value="TCW">제목or내용or작성자</option>
+	                		</select>
+	                		<input type="text" name="keyword">
+	                		<input type="hidden" name="pageNum" value='${pageMaker.cri.pageNum}'>
+	                		<input type="hidden" name="amount" value='${pageMaker.cri.amount}'>
+	                		<button class="btn btn-default">검색</button>
+	                	</form>
+                	</div>
+                </div>
+                <!-- end 검색조건 -->
+                
                 <!-- 페이징 처리 -->
                 <div class="container">
 					<div class='pull-right'>
 					  <ul class="pagination">
 					  
 					  	<c:if test="${pageMaker.prev}">
-					    	<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+					    	<li class="page-item"><a class="page-link" 
+					    				href="${pageMaker.startPage -1}">이전</a></li>
 					    </c:if>
 					    
 					    <c:forEach var="num" begin="${pageMaker.startPage}" 
-					    end="${pageMaker.endPage}">
-					    	<li class="page-item"><a class="page-link" href="#">${num}</a></li>
+					   						 end="${pageMaker.endPage}">
+					    	<li class="page-item ${pageMaker.cri.pageNum == num ? "active" : ""} "><a class="page-link"
+					    				href="${num}">${num}</a></li>
 					    </c:forEach>
 					    
 					    <c:if test="${pageMaker.next}">
-					    	<li class="page-item"><a class="page-link" href="#">Next</a></li>
+					    	<li class="page-item"><a class="page-link" 
+					    				href="${pageMaker.endPage +1}">다음</a></li>
 					    </c:if>
 					  </ul>
 					</div>
 				</div>
                 <!-- 페이징 종료 -->
+                
+                <form id="actionForm" action="/board/list" method="get">
+                	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+                	<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+                </form>
                 
             </div>
             <!-- /.panel-body -->
@@ -136,6 +165,29 @@
 		$('#regBtn').on("click", function(){
 			self.location = "/board/register"
 		});
+		
+		
+		// 페이지 번호 이벤트 처리
+		let actionForm = $("#actionForm");
+		$(".page-item a").on("click", function(e){
+			e.preventDefault();
+			
+			//console.log("click");
+			
+			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+			actionForm.submit();
+		}); // end 페이지 번호 이벤트 처리
+		
+		// 상세페이지 이동시 pageNum, amount값 전달
+		$(".move").on("click", function(e){
+			
+			e.preventDefault(); 
+			actionForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href") + "' >");
+			
+			actionForm.attr("action", "/board/get");
+			actionForm.submit();
+			
+		}); // end 상세페이지 이동시 pageNum, amount값 전달
 	});
 </script>
         

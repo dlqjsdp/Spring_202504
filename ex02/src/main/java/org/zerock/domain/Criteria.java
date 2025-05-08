@@ -12,6 +12,9 @@ public class Criteria {
 	private int pageNum; //페이지
 	private int amount;  //페이지 개수
 	
+	private String type; // 검색 조건, 제목, 내용, 작성자
+	private String keyword; // 검색 내용
+	
 	public Criteria() {
 		this(1, 10);
 	}
@@ -21,5 +24,8 @@ public class Criteria {
 		this.amount = amount;
 	}
 	
+	public String[] getTypeArr() {
+		return type==null ? new String[] {} : type.split("");
+	}
 	
 }

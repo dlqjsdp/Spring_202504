@@ -1,6 +1,7 @@
 package org.zerock.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.zerock.domain.BoardVO;
@@ -21,4 +22,8 @@ public interface BoardMapper {
 	public int update(BoardVO board);
 	
 	public List<BoardVO> getListWithPaging(Criteria cri);
+	
+	public int getTotalCount(Criteria cri);
+	
+	public List<BoardVO> searchTest(Map<String, Map<String, String>> map);
 }

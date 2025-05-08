@@ -20,6 +20,10 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
 				<form role="form" action="/board/modify" method="post">
+				
+                	<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}" />'>
+                	<input type="hidden" name="amount" value='<c:out value="${cri.amount}" />'>
+            		
 	            	<div class="form-group">
 	            		<label>Bno</label><input class="form-control" name="bno"
 	            				value="<c:out value='${board.bno}' />" readonly="readonly">
@@ -68,7 +72,13 @@
 				formObj.attr("action", "/board/remove")
 			}else if(operation == 'list'){
 				formObj.attr("action", "/board/list").attr("method", "get");
-				formObj.empty();
+				let pageNumTag = $("input[name='pageNum']").clone();
+				let amountTag = $("input[name='amount']").clone();
+				
+				formObj.empty(); // input 태그 name속성값을 클리어.
+				formObj.append(pageNumTag);
+				formObj.append(amountTag);
+				
 			}
 			formObj.submit();
 		});
