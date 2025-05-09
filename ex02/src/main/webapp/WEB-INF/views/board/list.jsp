@@ -53,15 +53,25 @@
                 	<div class="col-lg-12">
 	                	<form action="/board/list" id="searchForm">
 	                		<select name="type">
-	                			<option value="">--</option>
-	                			<option value="T">제목</option>
-	                			<option value="C">내용</option>
-	                			<option value="W">작성자</option>	                		
-	                			<option value="TC">제목or내용</option>
-	                			<option value="TW">제목or작성자</option>
-	                			<option value="TCW">제목or내용or작성자</option>
+	                			<option value="" 
+                			<c:out value="${pageMaker.cri.type == null ? 'selected' : ''}" />>--</option>
+	                			<option value="T" 
+	                		<c:out value="${pageMaker.cri.type == 'T' ? 'selected' : ''}" />>제목</option>
+	                			<option value="C"
+                			<c:out value="${pageMaker.cri.type == 'C' ? 'selected' : ''}" />>내용</option>
+	                			<option value="W"
+	                		<c:out value="${pageMaker.cri.type == 'W' ? 'selected' : ''}" />>작성자</option>	                		
+	                			<option value="TC"
+	                		<c:out value="${pageMaker.cri.type == 'TC' ? 'selected' : ''}" />>제목or내용</option>
+	                			<option value="TW"
+	                		<c:out value="${pageMaker.cri.type == 'TW' ? 'selected' : ''}" />>제목or작성자</option>
+	                			<option value="TCW"
+	                		<c:out value="${pageMaker.cri.type == 'TCW' ? 'selected' : ''}" />>제목or내용or작성자</option>
 	                		</select>
-	                		<input type="text" name="keyword">
+	                		
+	                		<input type="text" name="keyword"
+	                			value= <c:out value="${pageMaker.cri.keyword}" />>
+	                		
 	                		<input type="hidden" name="pageNum" value='${pageMaker.cri.pageNum}'>
 	                		<input type="hidden" name="amount" value='${pageMaker.cri.amount}'>
 	                		<button class="btn btn-default">검색</button>
@@ -98,6 +108,10 @@
                 <form id="actionForm" action="/board/list" method="get">
                 	<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
                 	<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+                	<input type="hidden" name="keyword"
+    						value="<c:out value='${pageMaker.cri.keyword}' />">
+	                <input type="hidden" name="type"
+    						value="<c:out value='${pageMaker.cri.type}' />">
                 </form>
                 
             </div>
@@ -188,6 +202,33 @@
 			actionForm.submit();
 			
 		}); // end 상세페이지 이동시 pageNum, amount값 전달
+		
+		
+		// 검색 버튼 이벤트 처리
+		let searchForm = $("#searchForm");
+		
+		$("#searchForm button").on("click", function(e){
+			
+			//console.log(searchForm.find("option:selected").val());
+			
+			if(!searchForm.find("option:selected").val()){
+				alert("검색 종류를 선택하세요");
+				return false;
+			}
+			
+			if(!searchForm.find("input[name='keyword']").val()){
+				alert("키워드를 입력하세요");
+				return false;
+			}
+			
+			// 검색 조건 필터링 된 상태에서 1페이지로 이동
+			searchForm.find("input[name='pageNum']").val("1");
+			
+			e.preventDefault();
+			
+			searchForm.submit();
+			
+		}); // end 검색 버튼 이벤트 처리
 	});
 </script>
         

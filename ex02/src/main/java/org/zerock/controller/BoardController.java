@@ -23,28 +23,21 @@ import lombok.extern.log4j.Log4j;
 @RequiredArgsConstructor
 @Log4j
 public class BoardController {
-	
 	private final BoardService service;
-	
-	
-//	@GetMapping("/list")
-//	public void list(Model model) {
-//		log.info("list..........");
-//		List<BoardVO> list = service.getList();
-//		model.addAttribute("list", list);
-//	}
 	
 	@GetMapping("/list")
 	public void list(Criteria cri, Model model) {
+		
 		log.info("list.........." + cri);
 		
 		List<BoardVO> list = service.getList(cri);
 		model.addAttribute("list", list);
+		                                                
 		model.addAttribute("pageMaker", new PageDTO(cri, service.getTotal(cri)));
 	}
 	
 	@GetMapping("/register")
-	public void register() {
+	public void  register() {		
 	}
 	
 	@PostMapping("/register")
@@ -58,16 +51,16 @@ public class BoardController {
 	}
 	
 	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam Long bno, Criteria cri, Model model) {
-		log.info("get....modify......");
+	public void get(@RequestParam Long bno,  Criteria cri, Model model) {
+		log.info("get...modify.......");
 		
 		model.addAttribute("board", service.get(bno));
 		model.addAttribute("cri", cri);
 	}
 	
 	@PostMapping("/remove")
-	public String remove(Long bno, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
-		log.info("remove.......");
+	public String remove(Long bno, @ModelAttribute("cri") Criteria cri , RedirectAttributes rttr) {
+		log.info("remove......");
 		
 		if(service.remove(bno)) {
 			rttr.addFlashAttribute("result", "삭제 성공했습니다.");
@@ -75,14 +68,15 @@ public class BoardController {
 		
 		rttr.addAttribute("pageNum", cri.getPageNum());
 		rttr.addAttribute("amount", cri.getAmount());
-		
+		rttr.addAttribute("type", cri.getType());
+		rttr.addAttribute("keyword", cri.getKeyword());
+	
 		return "redirect:/board/list";
 	}
 	
-	
 	@PostMapping("/modify")
 	public String modify(BoardVO board, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
-		log.info("modify.......");
+		log.info("modify.........");
 		
 		if(service.modify(board)) {
 			rttr.addFlashAttribute("result", "수정 성공했습니다.");
@@ -90,7 +84,9 @@ public class BoardController {
 		
 		rttr.addAttribute("pageNum", cri.getPageNum());
 		rttr.addAttribute("amount", cri.getAmount());
-
+		rttr.addAttribute("type", cri.getType());
+		rttr.addAttribute("keyword", cri.getKeyword());
+		
 		return "redirect:/board/list";
 	}
 }
