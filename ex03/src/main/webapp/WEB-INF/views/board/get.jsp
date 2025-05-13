@@ -58,9 +58,57 @@
 </div>
 <!-- /.row -->
 
+<script type="text/javascript" src="/resources/js/reply.js"></script>
+
+<script type="text/javascript">
+	let bnoValue = '<c:out value="${board.bno}" />';
+	
+	replyService.remove(42,
+			function(count){
+				if(count == 'success'){
+					alert("삭제 성공");
+				}
+			},
+			function(err){
+				alert("ERROR............." + err);
+			}
+	)
+	
+	
+	/*
+	replyService.getList({bno: bnoValue, page: 1},
+			function(list){
+			for(let i=0; i<list.length; i++){
+				console.log(list[i]);
+			}
+		}
+	);
+	*/
+	
+	
+	/*
+	replyService.add(
+		{reply:"JS Test", replyer: "tester", bno:7},
+		function(result){
+			alert("Result : " + result);
+		},
+		function(error){
+			alert("error : " + error);
+		}
+	)
+	*/
+	
+	
+
+</script>
+
+
 <script type="text/javascript">
 	$(document).ready(function(){
+		
 		let operForm = $("#operForm");
+		
+		console.log(replyService);
 		
 		$("button[data-oper='modify']").on("click", function(e){
 			operForm.attr("action", "/board/modify").submit();
@@ -76,4 +124,3 @@
 
 
 <%@ include file="../includes/footer.jsp" %>
-    
