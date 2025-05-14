@@ -68,9 +68,83 @@ let replyService = (function(){
 
     }; // end remove
 
+    //단건 데이터 가져오기
+    function get(rno, callback, error){
+
+        $.ajax({
+            type: 'get',
+            url: '/replies/' + rno,
+            success: function(result, status, xhr){
+                if(callback){
+                    callback(result);
+                }
+            },
+            error: function(xhr, status, err){
+                if(error){
+                    error(err);
+                }
+            }
+        });
+    } // end get
+
+    function update(reply, callback, error){
+        $.ajax({
+            type: 'put',
+            url: '/replies/' + reply.rno,
+            data: JSON.stringify(reply),
+            contentType: "application/json; charset=utf-8",
+            success: function(result, status, xhr){
+                if(callback){
+                    callback(result);
+                }
+            },
+            error: function(xhr, status, err){
+                if(error){
+                    error(err);
+                }
+            }
+
+        })
+    } // end update
+
+    function displayTime(timeValue){
+
+        let today = new Date();
+        let gap = today.getTime() - timeValue;
+
+        let dateObj = new Date(timeValue);
+        let str = "";
+
+        console.log("-------dateObj--------")
+        console.log(dateObj)
+
+        if(gap < (1000*60*60*24)){
+            let hh = dateObj.getHours();
+            let mi = dateObj.getMinutes();
+            let ss = dateObj.getSeconds();
+
+            return [(hh > 9 ? '': '0') + hh, ":" ,
+                    (mi > 9 ? '': '0') + mi, ":",
+                    (ss > 9 ? '': '0') + ss
+                   ].join('');
+        }else{
+            let yy = dateObj.getFullYear();
+            let mm = dateObj.getMonth()+1;
+            let dd = dateObj.getDate();
+
+            return [
+                yy, '/', (mm > 9 ? '': '0') + mm, '/',  (dd > 9 ? '': '0')+dd
+            ].join('');
+        }
+
+    } // end displayTime
+
     return {
         add: add,
         getList: getList,
         remove: remove,
+        get: get,
+        update: update,
+        displayTime: displayTime,
     };
 })();
