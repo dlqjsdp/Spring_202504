@@ -73,4 +73,12 @@ public class ReplyMapperTests {
 		mapper.getListWithPaging(cri, bno)
 			.forEach(reply -> log.info(reply));;
 	}
+	
+	@Test
+	public void testList2() {
+		Criteria cri = new Criteria(1,3);
+		
+		mapper.getListWithPaging(cri, 1704014L)
+		.forEach(list->log.info(list));
+	}
 }
