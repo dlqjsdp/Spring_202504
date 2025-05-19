@@ -1,0 +1,59 @@
+/* 검색창 영역 */
+.search-container {
+  max-width: 1200px;
+  margin: 40px auto 20px auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-top-box {
+  width: 350px;
+}
+
+.search-top-box .input-group {
+  display: flex;
+  gap: 6px;
+}
+
+.search-top-box .krds-form-select {
+  height: 40px;
+  width: 85px !important; 
+  font-size: 14px;
+  padding: 2px 8px;
+}
+
+.search-top-box .sch-input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.search-top-box .krds-input {
+  height: 40px;
+  font-size: 14px;
+  padding: 4px 8px;
+  flex: 1;
+}
+
+.search-top-box .krds-btn.icon {
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  margin-left: 8px;
+}
+
+/* 목록 테이블 */
+.krds-table-wrap {
+  max-width: 1200px;
+  margin: 50px auto 0 auto;
+}
+
+.krds-table-wrap table th {
+  text-align: center !important;
+}
+
+/* 페이징 */
+.krds-pagination {
+  margin-top: 40px;
+  text-align: center;
+}
