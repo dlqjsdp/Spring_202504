@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="customAccessDenied" class="org.zerock.security.CustomAccessDeniedHandler"></bean>
+	
+	<security:http>
+	
+		<security:intercept-url pattern="/sample/all" access="permitAll" />
+		<security:intercept-url pattern="/sample/member" access="hasRole('ROLE_MEMBER')" />
+		<security:intercept-url pattern="/sample/admin" access="hasRole('ROLE_ADMIN')" />
+		
+		<!-- csrf 보안 정책을 사용하지 않겠다 -->
+		<security:csrf disabled="true" />
+		
+		<!-- <security:form-login/> -->
+		<!-- 시큐리티가 제공하는 로그인 페이지를 사용하지 않고, 내가 직접 로그인 페이지를 구현하겠다. -->
+		<security:form-login login-page="/customLogin" />
+		
+		<!-- <security:access-denied-handler error-page="/accessError"/> -->
+		<!-- 접근 권한이 없을 때 실행되는 handler 예> 회원이 관리자페이지 접근시 -->
+		<security:access-denied-handler ref="customAccessDenied" />
+	</security:http>
+	
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="member" password="{noop}member" authorities="ROLE_MEMBER" />
+				<security:user name="admin" password="{noop}admin" authorities="ROLE_MEMBER, ROLE_ADMIN" />
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>
