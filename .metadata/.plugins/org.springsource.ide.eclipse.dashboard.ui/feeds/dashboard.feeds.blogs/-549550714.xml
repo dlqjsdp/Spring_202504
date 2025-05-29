@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 28 May 2025 00:37:20 GMT</lastBuildDate><item><title><![CDATA[This Week in Spring (AI) - May 27th, 2025]]></title><link>https://spring.io/blog/2025/05/27/this-week-in-spring-may-27th-2025</link><guid isPermaLink="true">https://spring.io/blog/2025/05/27/this-week-in-spring-may-27th-2025</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This time, I&apos;m talking to you after an &lt;em&gt;insane&lt;/em&gt; week behind me. Last week I flew from San Francisco to Stockholm, Sweden where I was the speaker for the JForum event, a monthly meetup. Spring drew the largest audience to JForum since before the pandemic! Then, it was off to beautiful Barcelona for the &lt;em&gt;fantastic&lt;/em&gt; Spring I/O event, where I did a keynote with Dr Mark Pollack on Spring AI, then hosted a joint talk with Spring cofounders Rod Johnson and Juergen Hoeller. Then, I did a joint talk with GraalVM found and Oracle vice president Thomas Wuerthinger. Then, it was off to Madrid where I met some customers and users. Then, it was off to beautiful Coimbra, Portgual, for the &lt;em&gt;amazing&lt;/em&gt; JNation.pt conference!&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 29 May 2025 06:27:52 GMT</lastBuildDate><item><title><![CDATA[Spring Modulith 1.4 GA, 1.3.6, and 1.2.13 released]]></title><link>https://spring.io/blog/2025/05/28/spring-modulith-1-4-1-3-6-and-1-2-13-released</link><guid isPermaLink="true">https://spring.io/blog/2025/05/28/spring-modulith-1-4-1-3-6-and-1-2-13-released</guid><dc:creator><![CDATA[odrotbohm]]></dc:creator><pubDate>Wed, 28 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the community, I am delighted that after a half year&apos;s work we can announce Spring Modulith 1.4. The release is packed with new features, such as:&lt;/p&gt;
+&lt;h2 id=&quot;core&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#core&quot; aria-label=&quot;core permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Core&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Refinements in the core &lt;code&gt;ApplicationModule(s)&lt;/code&gt; abstractions and documentation generation (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1150&quot;&gt;GH-1150&lt;/a&gt;, &lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1152&quot;&gt;GH-1152&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;We introduced an SPI to detect &lt;code&gt;NamedInterfaces&lt;/code&gt; programatically (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1009&quot;&gt;GH-1009&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;We fixed a performance regression in &lt;code&gt;JavaPackage&lt;/code&gt; the erroneously repeatedly recomputed all sub packages. (also fixed in 1.3.4 and 1.2.10, &lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1098&quot;&gt;GH-1098&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;testing&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#testing&quot; aria-label=&quot;testing permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Testing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Integration tests using &lt;code&gt;@ApplicationModuleTest&lt;/code&gt; can now consume bean instances of classes declared in test sources. (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/202&quot;&gt;GH-202&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The global &lt;code&gt;PublishedEvents&lt;/code&gt; instance registered in an &lt;code&gt;ApplicationContext&lt;/code&gt; will now be an &lt;code&gt;AssertablePublishedEvents&lt;/code&gt; if AssertJ is on the classpath. (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1110&quot;&gt;GH-1110&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;events&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#events&quot; aria-label=&quot;events permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Events&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Performance improvements both in the core event publication registry and the observability instrumentation. (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1146&quot;&gt;GH-1146&lt;/a&gt;, &lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1149&quot;&gt;GH-1149&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The event publication infrastructure has been revamped to now also support structurally identical events (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1056&quot;&gt;GH-1056&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;runtime-and-observability-support&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#runtime-and-observability-support&quot; aria-label=&quot;runtime and observability support permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Runtime and Observability Support&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The runtime support has been revamped to avoid the dependency on an external library to topologically sort application modules, so that they can be traversed in dependency order (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1060&quot;&gt;GH-1060&lt;/a&gt;). This allows assuming a stable module order in the application metadata file that ? previously only created in AOT mode ? is now also written when generating documentation (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1063&quot;&gt;GH-1063&lt;/a&gt;). That in turn allows us to avoid the full bootstrap of an &lt;code&gt;ApplicationModules&lt;/code&gt; instance at runtime, for example, to execute &lt;code&gt;ApplicationModuleListener&lt;/code&gt; beans (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1062&quot;&gt;GH-1062&lt;/a&gt;, &lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1065&quot;&gt;GH-1065&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Move to Micrometer Observations API ? &lt;a href=&quot;https://github.com/marcingrzejszczak&quot;&gt;Marcin Grzejszczak&lt;/a&gt; was kind enough to port our existing instrumentation based on the tracing APIs to the more modern observations API that allows more fine-grained integration and capturing of metrics. (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/928&quot;&gt;GH-928&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The observability module now automatically creates counters for application events published by modules. A new &lt;code&gt;ModulithEventMetrics&lt;/code&gt; API has been introduced and can be used through &lt;code&gt;ModulithEventMetricsCustomizer&lt;/code&gt; beans registered in the &lt;code&gt;ApplicationContext&lt;/code&gt; (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1068&quot;&gt;GH-1068&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;configuration&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#configuration&quot; aria-label=&quot;configuration permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Configuration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Consider global proxy settings for proxies created. (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/933&quot;&gt;GH-933&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;documentation-generation&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#documentation-generation&quot; aria-label=&quot;documentation generation permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Documentation generation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The Scenario API only considers non-empty collections as successful state transitions by default (&lt;a href=&quot;https://github.com/spring-projects/spring-modulith/issues/1131&quot;&gt;GH-1131&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The release, of course, also contains upgrades to the latest Spring Boot 3.5 and Framework 6.2 releases, as well as ArchUnit 1.4. The bugfix releases also update to their latest upstream dependencies. For details, please check the full &lt;a href=&quot;https://github.com/spring-projects/spring-modulith/releases/tag/1.4.0&quot;&gt;1.4 changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Up next are preparations for the 2.0 major release due in November. In the mean time, check out the Spring Modulith support the fine folks at IntelliJ have &lt;a href=&quot;https://chaos.social/@odrotbohm/114580037955157545&quot;&gt;coming up&lt;/a&gt; for IDEA.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[This Week in Spring (AI) - May 27th, 2025]]></title><link>https://spring.io/blog/2025/05/27/this-week-in-spring-may-27th-2025</link><guid isPermaLink="true">https://spring.io/blog/2025/05/27/this-week-in-spring-may-27th-2025</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This time, I&apos;m talking to you after an &lt;em&gt;insane&lt;/em&gt; week behind me. Last week I flew from San Francisco to Stockholm, Sweden where I was the speaker for the JForum event, a monthly meetup. Spring drew the largest audience to JForum since before the pandemic! Then, it was off to beautiful Barcelona for the &lt;em&gt;fantastic&lt;/em&gt; Spring I/O event, where I did a keynote with Dr Mark Pollack on Spring AI, then hosted a joint talk with Spring cofounders Rod Johnson and Juergen Hoeller. Then, I did a joint talk with GraalVM found and Oracle vice president Thomas Wuerthinger. Then, it was off to Madrid where I met some customers and users. Then, it was off to beautiful Coimbra, Portgual, for the &lt;em&gt;amazing&lt;/em&gt; JNation.pt conference!&lt;/p&gt;
 &lt;p&gt;All of which is to say, I had a &lt;em&gt;ton&lt;/em&gt; of fun! But I am exhausted and eager to just chill out in Lisboa for a few days before heading to Amsterdam for the amazing JSpring and, separately, to the IntelliJ IDEA Conf, then off to Tokyo for the JJUG Spring event!&lt;/p&gt;
 &lt;p&gt;That excitement is only possible because our community is &lt;em&gt;amazing&lt;/em&gt;! And on that note, let&apos;s dive into this week&apos;s roundup.&lt;/p&gt;
 &lt;ul&gt;
@@ -207,93 +239,4 @@ class Comment {
 &lt;p&gt;We&apos;ve explored the world of Vector Search and how it fits into the Spring ecosystem along with Vector Search origins in Spring AI. Support for the &lt;code&gt;Vector&lt;/code&gt; type ships with Spring Data 3.5 (2025.0) in the May 2025 release.&lt;/p&gt;
 &lt;p&gt;Vector Search Methods are a preview feature of the Spring Data 4.0 (2025.1) release train with first implementations for JPA through Hibernate Vector, MongoDB and Apache Cassandra. We&apos;re excited to hear what you think about Vector Search methods and how we can improve them further.&lt;/p&gt;
 &lt;p&gt;You can find the documentation about Vector Search in the reference documentation, in &lt;a href=&quot;https://docs.spring.io/spring-data/jpa/reference/4.0/repositories/vector-search.html&quot;&gt;JPA&lt;/a&gt;, &lt;a href=&quot;https://docs.spring.io/spring-data/mongodb/reference/5.0/mongodb/repositories/vector-search.html&quot;&gt;MongoDB&lt;/a&gt;, and &lt;a href=&quot;https://docs.spring.io/spring-data/cassandra/reference/5.0/cassandra/repositories/vector-search.html&quot;&gt;Cassandra&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A Bootiful Podcast: Spring IO founder Sergi Almar on Spring IO 2025]]></title><link>https://spring.io/blog/2025/05/22/a-bootiful-podcast-sergi-almar</link><guid isPermaLink="true">https://spring.io/blog/2025/05/22/a-bootiful-podcast-sergi-almar</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Thu, 22 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring and Spring I/O fans! In this installment we have the privilege of chatting with friend of the community and legend Sergi Almar about the amazing Spring IO 2025, where this episode was published, and a lot more.&lt;/p&gt;
-&lt;iframe title=&quot;Spring IO founder Sergi Almar on Spring IO 2025&quot; allowtransparency=&quot;true&quot; height=&quot;300&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:300px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?from=embed&amp;i=t9ya5-18b72ad-pb&amp;square=1&amp;share=1&amp;download=1&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;rtl=0&amp;logo_link=&amp;btn-skin=7&amp;size=300&quot; loading=&quot;lazy&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Spring Data Ahead of Time Repositories]]></title><link>https://spring.io/blog/2025/05/22/spring-data-ahead-of-time-repositories</link><guid isPermaLink="true">https://spring.io/blog/2025/05/22/spring-data-ahead-of-time-repositories</guid><dc:creator><![CDATA[christophstrobl]]></dc:creator><pubDate>Thu, 22 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In the past couple of years we have seen heavy investment throughout the Java ecosystem to reduce application startup times. The main focus gravitates around Ahead-of-Time optimizations.
-May it be condensing code into a GraalVM native executable, capturing already optimized bytecode with Coordinated Restore at Checkpoint (CRaC), Class Data Sharing (CDS) or its more recent successor AOT cache (part of project &lt;a href=&quot;https://openjdk.org/projects/leyden/&quot;&gt;Leyden&lt;/a&gt;).
-While barriers to entry vary between the different approaches, all of them move performance optimizations away from runtime into an earlier phase, such as build time or a separate packaging step.&lt;/p&gt;
-&lt;p&gt;The Spring portfolio has you covered: It supports you in whichever direction you want to take it:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Providing runtime hints for GraalVM native images&lt;/li&gt;
-&lt;li&gt;Generating AOT code for bean definitions and wiring&lt;/li&gt;
-&lt;li&gt;Application Context snapshotting using Project Leyden premain training runs&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;With Spring Data 4.0 (or the &lt;code&gt;2025.1&lt;/code&gt; release train if you prefer calver) we are taking your repositories to AOT. We are shifting all the Repository preparations that are done at application startup to build time.&lt;/p&gt;
-&lt;h1 id=&quot;how-does-it-work-and-what-can-you-expect&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#how-does-it-work-and-what-can-you-expect&quot; aria-label=&quot;how does it work and what can you expect permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How does it work and what can you expect?&lt;/h1&gt;
-&lt;p&gt;In short, when setting the &lt;code&gt;spring.aot.repositories.enabled=true&lt;/code&gt; configuration property, our AOT processing turns your repository query methods into actual source code by relying on the store-specific nature of the repository.
-Generated query methods contain the exact same code you would write if you would not use Spring Data to run your query.
-The generated source is then compiled together with your application and backing the repository interface.&lt;/p&gt;
-&lt;p&gt;Imagine a repository of pet owners as outlined below.&lt;/p&gt;
-&lt;p&gt;The repository itself does not inherit any functionality from one of the base repositories like &lt;code&gt;CrudRepository&lt;/code&gt; to keep the exposed functionality at a minimum.
-Still the &lt;code&gt;save&lt;/code&gt; method matches the signature of one of the predefined methods, while the two listed query methods are using a derived as well as explicitly annotated approach.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;interface OwnerRepository extends Repository&amp;#x3C;Owner, Integer&gt; {
-
-    Owner save(Owner owner);
-
-    List&amp;#x3C;OwnerSummary&gt; findAllByLastName(String lastName);
-
-    @Transactional(readOnly = true)
-    @Query(&quot;SELECT DISTINCT owner FROM Owner owner left join owner.pets WHERE owner.lastName LIKE :lastName%&quot;)
-    Page&amp;#x3C;Owner&gt; findByLastName(@Param(&quot;lastName&quot;) String lastName, Pageable pageable);
-
-    // ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;During the AOT phase the infrastructure will only consider relevant parts for the code generation.
-Take the before mentioned &lt;code&gt;save&lt;/code&gt; method for example: Since we are using JPA here, &lt;code&gt;SimpleJpaRepository&lt;/code&gt; already holds a default implementation for the &lt;code&gt;save&lt;/code&gt; method, allowing the code generation to skip the method.
-The same is true for any of your custom implementations.
-The remaining two methods for &lt;code&gt;OwnerRepository&lt;/code&gt; however are of course subject to AOT optimizations and end up in &lt;code&gt;OwnerRepositoryImpl__Aot&lt;/code&gt; located in the same package as the source &lt;code&gt;OwnerRepository&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Generated
-public class OwnerRepositoryImpl__Aot extends AotRepositoryFragmentSupport {
-
-  private final EntityManager entityManager;
-
-  public OwnerRepositoryImpl__Aot(EntityManager entityManager,
-    RepositoryFactoryBeanSupport.FragmentCreationContext context) {
-    // ...
-  }
-
-  /**
-   * AOT generated implementation of {@link OwnerRepository#findAllByLastName(String)}.
-   */
-  public List&amp;#x3C;OwnerSummary&gt; findAllByLastName(String lastName) {
-    String queryString = &quot;SELECT o.firstName AS firstName, o.lastName AS lastName, o.city AS city FROM org.springframework.samples.petclinic.owner.Owner o WHERE o.lastName = :lastName&quot;;
-    Query query = this.entityManager.createQuery(queryString, Tuple.class);
-    query.setParameter(&quot;lastName&quot;, lastName);
-
-    return (List&amp;#x3C;OwnerSummary&gt;) convertMany(query.getResultList(), false, OwnerSummary.class);
-  }
-
-  /**
-   * AOT generated implementation of {@link OwnerRepository#findByLastName(String,Pageable)}.
-   */
-  public Page&amp;#x3C;Owner&gt; findByLastName(String lastName, Pageable pageable) {
-    String queryString = &quot;SELECT DISTINCT owner FROM Owner owner left join owner.pets WHERE owner.lastName LIKE :lastName&quot;;
-    String countQueryString = &quot;SELECT count(DISTINCT owner) FROM Owner owner left join owner.pets WHERE owner.lastName LIKE :lastName&quot;;
-    if (pageable.getSort().isSorted()) {
-      DeclaredQuery declaredQuery = DeclaredQuery.jpqlQuery(queryString);
-      queryString = rewriteQuery(declaredQuery, pageable.getSort(), Owner.class);
-    }
-    Query query = this.entityManager.createQuery(queryString);
-    query.setParameter(&quot;lastName&quot;, &quot;%s%%&quot;.formatted(lastName));
-    if (pageable.isPaged()) {
-      query.setFirstResult(Long.valueOf(pageable.getOffset()).intValue());
-      query.setMaxResults(pageable.getPageSize());
-    }
-    LongSupplier countAll = () -&gt; {
-      Query countQuery = this.entityManager.createQuery(countQueryString);
-      countQuery.setParameter(&quot;lastName&quot;, &quot;%s%%&quot;.formatted(lastName));
-      return (Long) countQuery.getSingleResult();
-    };
-
-    return PageableExecutionUtils.getPage((List&amp;#x3C;Owner&gt;) query.getResultList(), pageable, countAll);
-  }
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As you can see the generated code can be rather simple or grow in complexity depending on the query, parameter binding or the requested data and its representation.
-On application startup, the AOT-generated classes are wired into the repository composition that is backing the proxy created for the repository interface.
-So for the first time you can actually see and step into the code that is run when calling a method on a repository interface.&lt;/p&gt;
-&lt;p&gt;Debugability aside, pre-generated code helps with parsing queries and exploring assumptions. It shortens code paths during repository bootstrap leading to faster overall application startup and less memory.&lt;/p&gt;
-&lt;img style=&quot;float: right; display: block; margin: auto;&quot; src=&quot;https://raw.githubusercontent.com/spring-io/spring-io-static/refs/heads/main/blog/cstrobl/20250522/spring-petclinic-jpa-aot-repositories-benchmark-green_theme.png&quot;&gt;
-&lt;p&gt;Depending on the underlying data store the reduction can be rather significant, like for Spring Data JPA leading to an additional startup boost and less memory on top of already more efficient AOT optimizations.&lt;/p&gt;
-&lt;p&gt;Ahead-of-Time repositories are currently a preview feature that in their first incarnation being available for JPA (via Hibernate only) and MongoDB, with more modules to follow with upcoming milestones.&lt;/p&gt;
-&lt;p&gt;Please give this new feature a try and do not hesitate to get in touch with us to let us know what you think.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;iframe title=&quot;Spring IO founder Sergi Almar on Spring IO 2025&quot; allowtransparency=&quot;true&quot; height=&quot;300&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:300px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?from=embed&amp;i=t9ya5-18b72ad-pb&amp;square=1&amp;share=1&amp;download=1&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;rtl=0&amp;logo_link=&amp;btn-skin=7&amp;size=300&quot; loading=&quot;lazy&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content:encoded></item></channel></rss>
