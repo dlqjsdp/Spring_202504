@@ -2,6 +2,7 @@ package org.zerock.controller;
 
 import java.util.List;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +38,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/register")
+	@PreAuthorize("isAuthenticated()")
 	public void  register() {		
 	}
 	
@@ -58,9 +60,12 @@ public class BoardController {
 		model.addAttribute("cri", cri);
 	}
 	
+	@PreAuthorize("principal.username == #writer")
 	@PostMapping("/remove")
-	public String remove(Long bno, @ModelAttribute("cri") Criteria cri , RedirectAttributes rttr) {
-		log.info("remove......");
+	public String remove(@RequestParam("bno") Long bno, @ModelAttribute("cri") Criteria cri , 
+					RedirectAttributes rttr, String writer) {
+		log.info("remove...... : " + bno);
+		log.info("remove......writer : " + writer);
 		
 		if(service.remove(bno)) {
 			rttr.addFlashAttribute("result", "삭제 성공했습니다.");
@@ -74,6 +79,7 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
+	@PreAuthorize("principal.username == #board.writer")
 	@PostMapping("/modify")
 	public String modify(BoardVO board, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
 		log.info("modify.........");

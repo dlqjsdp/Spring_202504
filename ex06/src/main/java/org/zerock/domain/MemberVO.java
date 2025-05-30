@@ -13,7 +13,7 @@ public class MemberVO {
 	private String userName;
 	private boolean enabled;
 	
-	private Date redDate;
+	private Date regDate;
 	private Date updateDate;
 	
 	private List<AuthVO> authList;

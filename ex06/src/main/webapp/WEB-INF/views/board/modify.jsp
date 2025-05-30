@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ include file="../includes/header.jsp" %>  
   
 <div class="row">
@@ -45,9 +46,17 @@
 	            		<label>Writer</label><input class="form-control" name="writer"
 	            				value="<c:out value='${board.writer}' />" readonly="readonly">
 	            	</div>	
-	            	
-	            		<button type="submit" data-oper='modify' class="btn btn-default">Modify</button>
-	            		<button type="submit" data-oper='remove' class="btn btn-danger">Remove</button>	            		
+	            		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+	            		
+	            		<sec:authentication property="principal" var="pinfo" />
+	            		
+	            		<sec:authorize access="isAuthenticated()">
+	            			<c:if test="${pinfo.username eq board.writer}">
+			            		<button type="submit" data-oper='modify' class="btn btn-default">Modify</button>
+			            		<button type="submit" data-oper='remove' class="btn btn-danger">Remove</button>	 
+		            		</c:if>
+	            		</sec:authorize>
+	            		           		
 	            		<button type="submit" data-oper='list' class="btn btn-info">List</button>
             	 </form>
             </div>

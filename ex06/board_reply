@@ -36,3 +36,11 @@ create table tbl_member_auth(
 select * from tbl_member;
 
 commit;
+
+
+create table persistent_logins(
+    username VARCHAR(64) not null,
+    series VARCHAR(64) primary key,
+    token VARCHAR(64) not null,
+    last_used TIMESTAMP not null
+);

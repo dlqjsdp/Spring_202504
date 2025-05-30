@@ -1,5 +1,6 @@
 package org.zerock.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,12 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @RequestMapping("/sample")
 public class SampleController {
+	
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MEMBER')")
+	@GetMapping("/annoMember")
+	public void doMember2() {
+		log.info("logined annotation member");
+	}
 	
 	@GetMapping("/all") // 로그인 or 로그인 안한 사람도 접근 가능
 	public void doAll() {

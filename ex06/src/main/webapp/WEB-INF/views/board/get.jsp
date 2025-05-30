@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+
 <%@ include file="../includes/header.jsp" %>
 
 <div class="row">
@@ -10,6 +12,7 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+
 <!-- /.row -->
 <div class="row">
     <div class="col-lg-12">
@@ -39,18 +42,26 @@
                 				value="<c:out value='${board.writer}' />" readonly="readonly">
                 	</div>
                 	
-                	<button data-oper='modify' class="btn btn-info">Modify</button>
+                	<sec:authentication property="principal" var="pinfo" />
+               		
+               		<sec:authorize access="isAuthenticated()">
+               			<c:if test="${pinfo.username eq board.writer}">
+               				<button data-oper='modify' class="btn btn-info">Modify</button>
+               			</c:if>
+               		</sec:authorize>
+                	
+                	
                 	<button data-oper='list' class="btn btn-default">List</button>
                 	
                 	<form id="operForm" action="/board/modify" method="get">
                 		<input type="hidden" id="bno" name="bno" value='<c:out value="${board.bno}" />'>
                 		<input type="hidden" name="pageNum" value= '<c:out value="${cri.pageNum}"/>'>
                 		<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
-                		<input type="hidden" name="keyword" value='<c:out value="${cri.keyword}" />'>
+                		<input type="hidden" name="keyword" value= <c:out value="${cri.keyword}" />>
                 		<input type="hidden" name="type" value="${cri.type}">
                 	</form>
             </div>
-            <!-- end panel-body -->           
+            <!-- end panel-body -->
         </div>
         <!-- end panel -->
     </div>
@@ -59,22 +70,25 @@
 <!-- /.row -->
 
 
-<!-- /.row 댓글 처리-->
+<!-- /.row  댓글 처리 -->
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <i class="fa fa-comments fa-fw"></i>Reply
-                <button id='addReplyBtn' class='btn btn-primary btn-xs pull-right'>댓글 등록</button>
+                
+                <sec:authorize access="isAuthenticated()">
+                	<button id='addReplyBtn' class='btn btn-primary btn-xs pull-right'>댓글 등록</button>
+                </sec:authorize>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <ul class="chat">
-                </ul>
+                </ul>	
             </div>
             <!-- end panel-body -->
-			<div class="panel-footer">
-			</div>
+            <div class="panel-footer">
+            </div>
         </div>
         <!-- end panel -->
     </div>
@@ -96,32 +110,30 @@
       
       <!-- Modal body -->
       <div class="modal-body">
-	      	<div class="form-group">
-	      		<label>Reply</label>
-	      		<input class="form-control" name="reply" value="New Reply!!!">
-	      	</div>
-	      	<div class="form-group">
-	      		<label>Replyer</label>
-	      		<input class="form-control" name="replyer" value="Replyer">
-	      	</div>
-	      	<div class="form-group">
-	      		<label>Reply Date</label>
-	      		<input class="form-control" name="replyDate" value="">
-	      	</div>
+	       <div class="form-group">
+		       <label>Reply</label>
+		       <input class="form-control" name="reply" value="New Reply!!!">
+	       </div>
+	       <div class="form-group">
+			   <label>Replyer</label>
+			   <input class="form-control" name="replyer" value="Replyer">
+	       </div>	
+	       <div class="form-group">
+			   <label>Reply Date</label>
+			   <input class="form-control" name="replyDate" value="">
+	       </div>	
       </div>
       
       <!-- Modal footer -->
       <div class="modal-footer">
-      	<button id="modalRegisterBtn" type="button" class="btn btn-primary">Register</button>
+        <button id="modalRegisterBtn" type="button" class="btn btn-primary">Register</button>
         <button id="modalModBtn" type="button" class="btn btn-info">Modify</button>
-        <button id="modalRemoveBtn" type="button" class="btn btn-danger">remove</button>
+        <button id="modalRemoveBtn" type="button" class="btn btn-danger">Remove</button>
         <button id="modalCloseBtn" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
-      
     </div>
   </div>
 </div> <!-- end The Modal -->
-
 
 <script type="text/javascript" src="/resources/js/reply.js"></script>
 
@@ -135,14 +147,14 @@
 		showList(1);
 		
 		function showList(page){
-			
+		
 			replyService.getList(
-				{bno:bnoValue, page: page ||1},
+				{bno:bnoValue, page: page ||1 },
 				
 				function(replyCnt, list){
-					
+	
 					if(page == -1){ //마지막 페이지 이동
-						pageNum = Math.ceil(replyCnt/10.0); //  172/10 = 17.2 = 18
+						pageNum  = Math.ceil(replyCnt/10.0); //      172/10 = 17.2 = 18
 						showList(pageNum);
 						return;
 					}
@@ -151,24 +163,27 @@
 					
 					if(list == null || list.length == 0){
 						replyUL.html("");
-						return;
+						return ;
 					}
-					for(let i=0; i<list.length; i++){
+					
+					for(let i=0 ; i<list.length ; i++){
 						str += "<li class='left clearfix' data-rno='"+list[i].rno+"'>"
-						str += "<div>"
-						str += "<div class='header'>"
-						str += "<strong class='primary-font'>"+list[i].replyer+"</strong>"
-						str += "<small class='pull-right text-muted'>"+ replyService.displayTime(list[i].replyDate)+"</small>"
-						str += "</div>"
-						str += "<p>"+list[i].reply+"</p>"
-						str += "</div></li>"
+	                	str +=	"<div>"
+	                	str +=	"<div class='header'>"
+	                	str +=	"<strong class='primary-font'>"+list[i].replyer+"</strong>"
+	                	str +=	"<small class='pull-right text-muted'>"+  
+	                				replyService.displayTime(list[i].replyDate)+"</small>"
+	                	str +=	"</div>"
+	                	str +=	"<p>"+list[i].reply+"</p>"
+	                	str += 	"</div></li>"
 					}
 					replyUL.html(str);
 					
 					showReplyPage(replyCnt); //페이징 처리 호출
-				}	
+				}
 			)
-		}; // end showList()
+		}; //end showList()	
+		
 		
 		let modal = $(".modal");
 		let modalInputReply = modal.find("input[name='reply']");
@@ -180,9 +195,25 @@
 		let modalRemoveBtn = $("#modalRemoveBtn")
 		let modalCloseBtn = $("#modalCloseBtn")
 		
+		let replyer = null;
+		
+		<sec:authorize access="isAuthenticated()">
+			replyer = '<sec:authentication property="principal.username" />';
+		</sec:authorize>
+		
+		let csrfHeaderName = "${_csrf.headerName}";
+		let csrfTokenValue = "${_csrf.token}";
+		
+		$(document).ajaxSend(function(e, xhr, options){
+			xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+		});
+		
 		//댓글 등록 화면
 		$("#addReplyBtn").on("click", function(e){
 			modal.find("input").val("");
+			
+			modal.find("input[name='replyer']").val(replyer); //댓글 작성자 자동입력(login한 사람ID)
+			
 			modalInputReplyDate.closest("div").hide();
 			modal.find("button[id != 'modalCloseBtn']").hide();
 			
@@ -190,7 +221,6 @@
 			
 			modal.modal("show");
 		});
-		
 		
 		//댓글 처리(DB저장)
 		modalRegisterBtn.on("click", function(e){
@@ -210,16 +240,16 @@
 			});
 		});
 		
-		// 댓글 클릭 이벤트 처리 - 이벤트 위임
-		$(".chat").on("click", "li", function(e){
-			let rno = $(this).data('rno');
-			// console.log(rno);
+		//댓글 클릭 이벤트 처리 - 이벤트 위임
+		$(".chat").on("click", "li" ,function(e){
+			let rno = $(this).data("rno");
 			
-			replyService.get(rno,
+			//console.log(rno);			
+			replyService.get(rno, 
 				function(reply){
 					modalInputReply.val(reply.reply);
 					modalInputReplyer.val(reply.replyer);
-					modalInputReplyDate.val(replyService.displayTime(reply.replyDate))
+					modalInputReplyDate.val( replyService.displayTime(reply.replyDate))
 					.attr("readonly", "readonly");
 					modal.data("rno", reply.rno);
 					
@@ -230,155 +260,176 @@
 					modal.modal("show");
 				}
 			);
-		});
-		
-		// 댓글 수정 이벤트 처리
-		modalModBtn.on("click", function(e){
 			
-			let reply = {
-					rno:modal.data('rno'),
-					reply:modalInputReply.val()
-			};
-			replyService.update(reply, function(result){
-				alert(result);
-				modal.modal("hide");
-				showList(pageNum);
-			})
 		});
 		
-		// 댓글 삭제 이벤트 처리
+		//댓글 삭제 이벤트 처리
 		modalRemoveBtn.on("click", function(e){
 			
 			let rno = modal.data('rno');
 			
-			replyService.remove(rno, function(result){
+			if(!replyer){
+				alert("로그인 후 삭제가 가능합니다.");
+				modal.modal("hdie");
+				return;
+			}
+			
+			let originalReplyer = modalInputReplyer.val();
+			
+			if(replyer != originalReplyer){
+				alert("자신이 작성한 댓글만 삭제가 가능합니다.");
+				modal.modal("hide");
+				return;
+			}
+			
+			replyService.remove(rno, originalReplyer, function(result){
 				alert(result);
 				modal.modal("hide");
 				showList(pageNum);
-			})
+			})			
 		});
 		
+		//댓글 수정 이벤트 처리
+		modalModBtn.on("click", function(e){
+			
+			if(!replyer){
+				alert("로그인 후 수정이 가능합니다.");
+				modal.modal("hdie");
+				return;
+			}
+			
+			let originalReplyer = modalInputReplyer.val();
+			
+			if(replyer != originalReplyer){
+				alert("자신이 작성한 댓글만 수정이 가능합니다.");
+				modal.modal("hide");
+				return;
+			}
+			
+			let reply = {
+					rno:modal.data('rno'),
+					reply: modalInputReply.val(),
+					replyer: originalReplyer
+			};
+			
+			replyService.update(reply, function(result){
+				alert(result);
+				modal.modal("hide");
+				showList(pageNum);
+			})			
+		});
 		
 		//페이징 처리
-	      let pageNum = 1;
-	      let replyPageFooter = $(".panel-footer");
-	      
-	      function showReplyPage(replyCnt){
-	      
-	         let endNum = Math.ceil(pageNum /10.0) * 10;
-	         let startNum = endNum - 9;
-	         
-	         let prev = startNum != 1;  //이전버튼
-	         let next = false;          //다음버튼
-	         
-	         //real page( 끝 페이지 재계산)
-	         if(endNum * 10 >= replyCnt){
-	            endNum = Math.ceil(replyCnt/10.0);
-	         }
-	         
-	         //next버튼 유무 조건?
-	         if(endNum *10 < replyCnt){ 
-	            next = true;
-	         }
-	         
-	         let str = "<ul class='pagination pull-right'>";
-	         
-	         if(prev){
-	            str+= "<li class='page-item'>"
-	            str+= "<a class='page-link' href='"+(strNum-1)+"'>Previous</a></li>";
-	         }
-	         
-	         for(let i=startNum; i<=endNum; i++){
-	            let active = pageNum == i? "active":"";
-	            
-	            str+= "<li class='page-item "+active+"'><a class='page-link' href='"+i+"'>" + i + "</a></li>";
-	         }
-	         
-	         if(next){
-	            str+= "<li class='page-item'>"
-	            str+= "<a class='page-link' href='"+(endNum+1)+"'>Next</a></li>";
-	         }
-	         
-	         str+= "</ul>";
-	         
-	         console.log(str);
-	         
-	         replyPageFooter.html(str);
-	         
-	      }  //end showReplyPage
-	      
-	      replyPageFooter.on("click", "li a", function(e){
-	          e.preventDefault();
-	          
-	          let targetPageNum = $(this).attr("href");
-	          
-	          pageNum = targetPageNum;
-	          
-	          showList(pageNum);
-	          
-	       }); //end replyPageFooter
+		let pageNum = 1;
+		let replyPageFooter = $(".panel-footer");
 		
+		function showReplyPage(replyCnt){
+		
+			let endNum = Math.ceil(pageNum /10.0) * 10;
+			let startNum = endNum - 9;
+			
+			let prev = startNum != 1;  //이전버튼
+			let next = false;          //다음버튼
+			
+			//real page( 끝 페이지 재계산)
+			if(endNum * 10 >= replyCnt){
+				endNum = Math.ceil(replyCnt/10.0);
+			}
+			
+			//next버튼 유무 조건?
+			if(endNum *10 < replyCnt){ 
+				next = true;
+			}
+			
+			let str = "<ul class='pagination pull-right'>";
+			
+			if(prev){
+				str+= "<li class='page-item'>"
+				str+= "<a class='page-link' href='"+(strNum-1)+"'>Previous</a></li>";
+			}
+			
+			for(let i=startNum; i<=endNum; i++){
+				let active = pageNum == i? "active":"";
+				
+				str+= "<li class='page-item "+active+"'><a class='page-link' href='"+i+"'>" + i + "</a></li>";
+			}
+			
+			if(next){
+				str+= "<li class='page-item'>"
+				str+= "<a class='page-link' href='"+(endNum+1)+"'>Next</a></li>";
+			}
+			
+			str+= "</ul>";
+			
+			//console.log(str);
+			
+			replyPageFooter.html(str);
+			
+		}  //end showReplyPage
+		
+		replyPageFooter.on("click", "li a", function(e){
+			e.preventDefault();
+			
+			let targetPageNum = $(this).attr("href");
+			
+			pageNum = targetPageNum;
+			
+			showList(pageNum);
+			
+		}); //end replyPageFooter
 		
 	});
-	
-	
 
+	
 	/*
 	replyService.update(
-			{rno: 41, reply: "방금 댓글 내용 수정"},
+			{rno: 21, reply: "방금 댓글 내용 수정"}, 
 			function(result){
 				alert(result)
-			}			
-	);
-	*/
-
-	/*
-	replyService.get(41, 
+			}
+	);	
+	
+	replyService.get(
+			21, 
 			function(result){
 					console.log(result);
-	});
-	*/
+			}
+	);	
 	
-	/*
-	replyService.remove(42,
+	replyService.remove(22, 
 			function(count){
 				if(count == 'success'){
 					alert("삭제 성공");
 				}
 			},
 			function(err){
-				alert("ERROR............." + err);
+				alert("ERROR......" + err);
 			}
 	)
-	*/
 	
-	/*
-	replyService.getList({bno: bnoValue, page: 1},
+	replyService.getList(
+			{bno: bnoValue, page:1},
 			function(list){
-			for(let i=0; i<list.length; i++){
-				console.log(list[i]);
+				for(let i=0; i<list.length; i++){
+					console.log(list[i]);
+				}
 			}
-		}
+	);	
+	
+	replyService.add(
+			{reply:"JS Test",  replyer: "tester", bno:8},
+			
+			function(result){
+				alert("Result : " + result);
+			},
+			
+			function(error){
+				alert("error : " + error);
+			}
 	);
 	*/
 	
-	
-	/*
-	replyService.add(
-		{reply:"JS Test", replyer: "tester", bno:7},
-		function(result){
-			alert("Result : " + result);
-		},
-		function(error){
-			alert("error : " + error);
-		}
-	)
-	*/
-	
-	
-
 </script>
-
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -398,6 +449,5 @@
 	});	
 </script>
 
-
-
 <%@ include file="../includes/footer.jsp" %>
+    

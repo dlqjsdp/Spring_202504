@@ -8,6 +8,7 @@
 	<bean id="customAccessDenied" class="org.zerock.security.CustomAccessDeniedHandler"></bean>
 	<bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean>
 	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<bean id="CustomUserDetailsService" class="org.zerock.security.CustomUserDetailsService"></bean>
 	
 	<security:http>
 	
@@ -20,21 +21,27 @@
 		
 		<!-- <security:form-login/> -->
 		<!-- 시큐리티가 제공하는 로그인 페이지를 사용하지 않고, 내가 직접 로그인 페이지를 구현하겠다. -->
-		<security:form-login login-page="/customLogin" 
+		<!-- <security:form-login login-page="/customLogin" 
 			authentication-success-handler-ref="customLoginSuccess"
-		/>
+		/> -->
+		
+		<security:form-login login-page="/customLogin" />
 		
 		<!-- <security:access-denied-handler error-page="/accessError"/> -->
 		<!-- 접근 권한이 없을 때 실행되는 handler 예> 회원이 관리자페이지 접근시 -->
 		<security:access-denied-handler ref="customAccessDenied" />
 		
-		<security:logout logout-url="/customLogout" invalidate-session="true" />
+		<security:logout logout-url="/customLogout" invalidate-session="true" 
+						delete-cookies="remember-me, JSESSIONID" />
+		
+		
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800" />
 		
 	</security:http>
 	
 	<security:authentication-manager>
-		<security:authentication-provider>
-			<security:jdbc-user-service data-source-ref="dataSource" />
+		<security:authentication-provider user-service-ref="CustomUserDetailsService">
+			<!-- <security:jdbc-user-service data-source-ref="dataSource" /> -->
 			
 			<security:password-encoder ref="bcryptPasswordEncoder" />
 		</security:authentication-provider>
