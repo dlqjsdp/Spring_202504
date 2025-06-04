@@ -40,7 +40,7 @@ public class UploadController {
 		log.info("upload from...........");
 	}
 	
-	@PostMapping("/uploadForm")
+	@PostMapping("/uploadFormAction")
 	public void uploadFormPost(MultipartFile[] uploadFile, Model model) {
 		
 		String uploadFolder = "c:\\upload";
@@ -54,7 +54,7 @@ public class UploadController {
 			File savedFile = new File(uploadFolder, multipartFile.getOriginalFilename());
 			
 			try {
-				multipartFile.transferTo(savedFile);
+				multipartFile.transferTo(savedFile); // 저장
 			} catch (IllegalStateException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
